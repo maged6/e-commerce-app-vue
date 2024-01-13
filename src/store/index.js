@@ -9,8 +9,8 @@ export const productsModule = defineStore("productsModule", {
     homeDecoration: [],
     skincare: [],
     fragrances: [],
-    ProductsCategory:[],
-    item:[],
+    ProductsCategory: [],
+    item: [],
     singleProducts: [
       {
         title: "Laptops",
@@ -41,9 +41,9 @@ export const productsModule = defineStore("productsModule", {
         routs: "mens-shirts",
       },
       {
-        title:  "Mens Watches",
-        routs:  "mens-watches",
-      }
+        title: "Mens Watches",
+        routs: "mens-watches",
+      },
     ],
   }),
   getters: {},
@@ -69,15 +69,19 @@ export const productsModule = defineStore("productsModule", {
         this.products = res.data.products.slice(0, 8);
       });
     },
-    async getProductsByCategory(category){
-      await axios.get(`https://dummyjson.com/products/category/${category}`).then( res =>{
-        this.ProductsCategory = res.data.products
-      })
+    async getProductsByCategory(category) {
+      await axios
+        .get(`https://dummyjson.com/products/category/${category}`)
+        .then((res) => {
+          this.ProductsCategory = res.data.products;
+        });
     },
-    async getProductById(ProductId){
-      await axios.get(`https://dummyjson.com/products/${ProductId}`).then( res =>{
-        this.item = res.data
-      })
+    async getProductById(ProductId) {
+      await axios
+        .get(`https://dummyjson.com/products/${ProductId}`)
+        .then((res) => {
+          this.item = res.data;
+        });
     },
   },
   modules: {},
