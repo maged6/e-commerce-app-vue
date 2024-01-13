@@ -7,7 +7,7 @@
       location="left bottom"
       max-width="300"
       timeout="3000"
-    >
+    > this 
       {{ itemTitle }} has been added to your cart successfuly!
       <template v-slot:actions>
         <v-icon @click="bar = flase">mdi-close</v-icon>
