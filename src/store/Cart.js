@@ -34,7 +34,10 @@ export const CartStore = defineStore("CartStore", {
         }
       }
       localStorage.setItem("cart-item", JSON.stringify(this.cartItems));
-
+    },
+    resetItem() {
+      this.cartItems = [];
+      localStorage.removeItem("cart-item");
     },
   },
   modules: {},

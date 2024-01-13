@@ -134,6 +134,7 @@
                   width="40%"
                   style="font-size: 22px; font-weight: 700"
                   class="my-5"
+                  @click="dialog = true"
                 >
                   Submit</v-btn
                 >
@@ -206,14 +207,20 @@
         </v-col>
       </v-row>
     </v-container>
+  <OrderSuccess :popup="dialog" v-if="dialog" @close_popup="dialog = falas" />
   </div>
 </template>
 
 <script>
 import { CartStore } from "@/store/Cart.js";
 import { mapState } from "pinia";
+import OrderSuccess from "@/components/OrderSuccess.vue";
 
 export default {
+  components:{
+    OrderSuccess
+  },
+
   computed: {
     ...mapState(CartStore, ["cartItems"]),
     calcTotalPrice() {
@@ -231,6 +238,7 @@ export default {
   data() {
     return {
       quantity: 1,
+      dialog: false, 
     };
   },
 };
