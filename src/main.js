@@ -16,12 +16,10 @@ import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
-//swiper 
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-
-
+//swiper
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const vuetify = createVuetify({
   components,
@@ -30,7 +28,7 @@ const vuetify = createVuetify({
 
 createApp(App)
   .use(vuetify)
-  .provide("Emitter" , Emitter)
+  .provide("Emitter", Emitter)
   .use(createPinia())
   .use(router)
   .mount("#app");

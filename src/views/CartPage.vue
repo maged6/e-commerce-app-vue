@@ -2,7 +2,7 @@
   <div class="card-page">
     <v-container fluid>
       <v-col cols="12">
-        <h1 class="py-4"> Your Cart</h1>
+        <h1 class="py-4">Your Cart</h1>
         <div
           class="bar-parent mt-6"
           style="position: relative"
@@ -12,7 +12,7 @@
             :color="`${
               parseInt((calcTotalPrice / 10000) * 100) < 50
                 ? '#F44336'
-                : parseInt((calcTotalPrice / 10000) * 100) > 50 &&
+                : parseInt((calcTotalPrice / 10000) * 100) >= 50 &&
                   parseInt((calcTotalPrice / 10000) * 100) < 100
                 ? '#ff9800'
                 : '#4CAF50'
@@ -33,7 +33,7 @@
             :color="`${
               parseInt((calcTotalPrice / 10000) * 100) < 50
                 ? 'red'
-                : parseInt((calcTotalPrice / 10000) * 100) > 50 &&
+                : parseInt((calcTotalPrice / 10000) * 100) >= 50 &&
                   parseInt((calcTotalPrice / 10000) * 100) < 100
                 ? 'orange'
                 : 'green'
@@ -129,7 +129,7 @@
                         style="
                           border: none;
                           outline: none;
-                          width: 40px;
+                          width: 30px;
                           font-size: 13px;
                         "
                         class="text-center py-2"
@@ -265,8 +265,13 @@
 
             <hr style="height: 2px; color: black; background-color: black" />
             <v-card-action class="d-flex flex-column mt-2" style="gap: 10px">
-              <v-btn class="w-100" color="blue" height="60" variant="elevated"
-              @click="$router.push({name : 'checkout-page'})">
+              <v-btn
+                class="w-100"
+                color="blue"
+                height="60"
+                variant="elevated"
+                @click="$router.push({ name: 'checkout-page' })"
+              >
                 Proceed To Checkout</v-btn
               >
               <v-btn

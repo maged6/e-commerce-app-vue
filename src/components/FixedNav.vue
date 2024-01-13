@@ -25,7 +25,7 @@
                 <router-link
                   :to="{
                     name: 'products',
-                    params: { category: pro.routs, title: pro.title },
+                    query: { category: pro.routs, title: pro.title },
                   }"
                   style="text-decoration: none; color: white"
                 >

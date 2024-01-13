@@ -8,7 +8,6 @@
         class="title-categories d-flex align-center justify-center px-5 mb-3"
       >
         <h3 class="text-center flex-grow-1">Top Categories</h3>
-        <a href="#" class="text-black"> Shop All </a>
       </div>
       <v-container fluid>
         <v-row>

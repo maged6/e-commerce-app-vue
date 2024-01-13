@@ -167,7 +167,7 @@ export default {
         this.btnLoading = false;
         this.addItem(item);
         this.Emitter.emit("openCart");
-        this.Emitter.emit("showMsg" , item.title);
+        this.Emitter.emit("showMsg", item.title);
         this.quickView = false;
       }, 1000);
     },

@@ -4,7 +4,6 @@
       <h2 :style="`font-weight: 900; font-size: 30px; color:${titleColor};`">
         {{ title }}
       </h2>
-      <a href="#" style="font-size: 14px; color: black">Shop All </a>
     </div>
     <div class="loading" v-if="!products.length">
       <v-container fluid>
@@ -19,10 +18,15 @@
     </div>
     <swiper
       :pagination="{ el: '.swiper-pagination', clickable: true }"
+      :autoplay="{
+        delay: 3000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      }"
+      :loop="true"
       :modules="modules"
       :slides-per-view="4"
       :space-between="35"
-      :autoplay="{ delay: 4000 }"
       class="pb-9 px-5"
       :navigation="{
         prevIcon: '.prev-navigation',
@@ -96,7 +100,7 @@
               }}
             </span>
           </v-card-text>
-          <v-btn-toggle v-model="selectImg[item.title]">
+          <v-btn-toggle v-model="selectImg[item.title]" mandatory>
             <v-btn
               v-for="(img, index) in item.images"
               :key="index"

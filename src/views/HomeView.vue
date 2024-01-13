@@ -47,18 +47,14 @@
 
     <v-container fluid>
       <v-row>
-        <v-col cols="12" >
-          <img src="@/images/sale-skin.webp"  height="400px" class="w-100" />
+        <v-col cols="12">
+          <img src="@/images/sale-skin.webp" height="400px" class="w-100" />
         </v-col>
       </v-row>
     </v-container>
 
-    <FlashDeals
-      :products="fragrances"
-      title="Fragrances"
-      titleColor="black"
-    />
-    <WhyShopWithUS/>
+    <FlashDeals :products="fragrances" title="Fragrances" titleColor="black" />
+    <WhyShopWithUS />
   </div>
 </template>
 
@@ -89,11 +85,18 @@ export default {
     WhyShopWithUS,
   },
   computed: {
-    ...mapState(productsModule, ["products", "lapTops", "mobilePhone" ,"homeDecoration" , "skincare", "fragrances", "groceries"]),
+    ...mapState(productsModule, [
+      "products",
+      "lapTops",
+      "mobilePhone",
+      "homeDecoration",
+      "skincare",
+      "fragrances",
+      "groceries",
+    ]),
   },
   methods: {
-    ...mapActions(productsModule, ["getProducts" ]),
-
+    ...mapActions(productsModule, ["getProducts"]),
   },
   async mounted() {
     await this.getProducts();

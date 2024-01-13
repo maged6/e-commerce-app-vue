@@ -20,8 +20,11 @@
                 <v-icon color="#878484">mdi-chevron-right</v-icon>
               </template>
             </v-breadcrumbs>
-            <v-card-text class="text-center" style="font-size: 15px; font-weight: 700; color: rgb(88, 85, 85);">
-                Experss Checkout
+            <v-card-text
+              class="text-center"
+              style="font-size: 15px; font-weight: 700; color: rgb(88, 85, 85)"
+            >
+              Experss Checkout
             </v-card-text>
             <v-card-actions class="px-16 d-flex">
               <v-btn
@@ -46,15 +49,19 @@
                 PLay</v-btn
               >
             </v-card-actions>
-            <v-card-text class="d-flex justify-center align-center py-8" >
-              <v-divider thickness="3" style="color: rgb(138, 135, 135);"></v-divider>
-              <span class="px-4" style="color: rgb(138, 135, 135);">OR</span>
-              <v-divider thickness="3" style="color: rgb(138, 135, 135);"></v-divider>
+            <v-card-text class="d-flex justify-center align-center py-8">
+              <v-divider
+                thickness="3"
+                style="color: rgb(138, 135, 135)"
+              ></v-divider>
+              <span class="px-4" style="color: rgb(138, 135, 135)">OR</span>
+              <v-divider
+                thickness="3"
+                style="color: rgb(138, 135, 135)"
+              ></v-divider>
             </v-card-text>
-            <div class="submit_address">  
-              <v-card-title> 
-                Shipping address
-              </v-card-title>
+            <div class="submit_address">
+              <v-card-title> Shipping address </v-card-title>
               <v-select
                 :items="[
                   'American ',
@@ -72,10 +79,12 @@
                 bg-color="white"
                 variant="outlined"
                 class="pt-8"
-                
               ></v-select>
 
-              <div class="d-flex align-center justify-space-between" style="gap: 10px;"> 
+              <div
+                class="d-flex align-center justify-space-between"
+                style="gap: 10px"
+              >
                 <v-text-field
                   label="First name"
                   bg-color="white"
@@ -88,16 +97,19 @@
                 ></v-text-field>
               </div>
               <v-text-field
-                  label="Address"
-                  bg-color="white"
-                  variant="outlined"
-                ></v-text-field>
-                <v-text-field
-                  label="Apartment, suite, etc.(optional)"
-                  bg-color="white"
-                  variant="outlined"
-                ></v-text-field>
-                <div class="d-flex align-center justify-space-between" style="gap: 10px;"> 
+                label="Address"
+                bg-color="white"
+                variant="outlined"
+              ></v-text-field>
+              <v-text-field
+                label="Apartment, suite, etc.(optional)"
+                bg-color="white"
+                variant="outlined"
+              ></v-text-field>
+              <div
+                class="d-flex align-center justify-space-between"
+                style="gap: 10px"
+              >
                 <v-text-field
                   label="city"
                   bg-color="white"
@@ -114,20 +126,18 @@
                   variant="outlined"
                 ></v-text-field>
               </div>
-              <div class="d-flex align-center justify-end"> 
+              <div class="d-flex align-center justify-end">
                 <v-btn
-                color="#0a3456"
-                variant="elevated"
-                height="65"
-                width="40%"
-                style="font-size: 22px; font-weight: 700"
-                class="my-5"
-              >
-                Submit</v-btn
-              >
+                  color="#0a3456"
+                  variant="elevated"
+                  height="65"
+                  width="40%"
+                  style="font-size: 22px; font-weight: 700"
+                  class="my-5"
+                >
+                  Submit</v-btn
+                >
               </div>
-             
-
             </div>
           </v-card>
         </v-col>
@@ -220,7 +230,6 @@ export default {
 
   data() {
     return {
-      
       quantity: 1,
     };
   },

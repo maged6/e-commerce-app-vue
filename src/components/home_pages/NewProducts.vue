@@ -4,7 +4,6 @@
       <h2 style="font-weight: 900; font-size: 30px; color: rgb(156, 0, 0)">
         New Prodects
       </h2>
-      <a href="#" style="font-size: 14px; color: black">Shop All </a>
     </div>
     <div class="prodects">
       <v-container fluid>
@@ -24,6 +23,12 @@
 
             <swiper
               :pagination="{ el: '.swiper-pagination', clickable: true }"
+              :autoplay="{
+                delay: 3000,
+                pauseOnMouseEnter: true,
+                disableOnInteraction: false,
+              }"
+              :loop="true"
               :modules="modules"
               :slides-per-view="3"
               :space-between="20"
@@ -104,7 +109,7 @@
                       }}
                     </span>
                   </v-card-text>
-                  <v-btn-toggle v-model="selectImg[item.title]">
+                  <v-btn-toggle v-model="selectImg[item.title]" mandatory>
                     <v-btn
                       v-for="(img, index) in item.images"
                       :key="index"

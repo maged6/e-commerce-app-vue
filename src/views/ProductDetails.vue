@@ -1,25 +1,29 @@
 <template>
   <v-container fluid class="mt-16">
     <v-row v-if="loading">
-            <v-col cols="7"   >
-            <v-skeleton-loader  type="image,  image, image " ></v-skeleton-loader>
-          </v-col>
-          <v-col cols="5" >
-            <v-skeleton-loader  type="article,  article,article" ></v-skeleton-loader>
-          </v-col>
-        </v-row>
-    <v-row  v-if="!loading" >
       <v-col cols="7">
-        <img :src="tab ? tab : item.thumbnail" style="width: 100%; height: 500px"/>
-        <v-tabs
-      center-active
-      height="220"
-      v-model="tab" 
-    >
-      <v-tab v-for="(images, i) in item.images" :key="i" class="mx-8" :value="images">
-        <img :src="images" width="100" height="200"/> 
-    </v-tab>
-    </v-tabs>
+        <v-skeleton-loader type="image,  image, image "></v-skeleton-loader>
+      </v-col>
+      <v-col cols="5">
+        <v-skeleton-loader type="article,  article,article"></v-skeleton-loader>
+      </v-col>
+    </v-row>
+    <v-row v-if="!loading">
+      <v-col cols="7">
+        <img
+          :src="tab ? tab : item.thumbnail"
+          style="width: 100%; height: 500px"
+        />
+        <v-tabs center-active height="220" v-model="tab">
+          <v-tab
+            v-for="(images, i) in item.images"
+            :key="i"
+            class="mx-8"
+            :value="images"
+          >
+            <img :src="images" width="100" height="200" />
+          </v-tab>
+        </v-tabs>
       </v-col>
       <v-col cols="5">
         <v-card elevation="0">
@@ -91,25 +95,24 @@
           <v-card-text class="px-0">
             <strong> Subtotal: </strong>
             ${{
-                  Math.ceil(
-                    item.price - (item.discountPercentage * item.price) / 100
-                  ) * quantity
-                }}
+              Math.ceil(
+                item.price - (item.discountPercentage * item.price) / 100
+              ) * quantity
+            }}
           </v-card-text>
-          <v-card-actions class="mt-7 px-15 w-100" > 
+          <v-card-actions class="mt-7 px-15 w-100">
             <v-btn
-            variant="outlined"
-          density="compact"
-          style="background-color: black; color: white;"
-          rounded
-          width="420"
-          height="50"
-          :loading="btnLoading"
-          @click="addTocart(item)"
-          > 
-            Add To Cart
-          </v-btn>
-      
+              variant="outlined"
+              density="compact"
+              style="background-color: black; color: white"
+              rounded
+              width="420"
+              height="50"
+              :loading="btnLoading"
+              @click="addTocart(item)"
+            >
+              Add To Cart
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -126,7 +129,7 @@ import { mapState } from "pinia";
 export default {
   inject: ["Emitter"],
 
-    methods: {
+  methods: {
     ...mapActions(productsModule, ["getProductById"]),
     ...mapActions(CartStore, ["addItem"]),
     addTocart(item) {
@@ -136,7 +139,7 @@ export default {
         this.btnLoading = false;
         this.addItem(item);
         this.Emitter.emit("openCart");
-        this.Emitter.emit("showMsg" , item.title);
+        this.Emitter.emit("showMsg", item.title);
         this.quickView = false;
       }, 1000);
     },
@@ -145,17 +148,16 @@ export default {
     ...mapState(productsModule, ["item"]),
   },
   async beforeMount() {
-    this.loading = true ;
+    this.loading = true;
     await this.getProductById(this.$route.params.ProductId);
-    this.loading = false ;
+    this.loading = false;
   },
   data: () => {
     return {
       quantity: 1,
       tab: "",
-      loading:false,
-      btnLoading: false
-
+      loading: false,
+      btnLoading: false,
     };
   },
 };

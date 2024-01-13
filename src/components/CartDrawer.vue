@@ -30,9 +30,14 @@
           v-if="cartItems.length"
         >
           <v-icon
-            :color="`${parseInt((calcTotalPrice / 10000) * 100) < 50 ? '#F44336' :
-            parseInt((calcTotalPrice / 10000) * 100) > 50 && 
-            parseInt((calcTotalPrice / 10000) * 100) < 100 ? '#ff9800' : '#4CAF50' }`"
+            :color="`${
+              parseInt((calcTotalPrice / 10000) * 100) < 50
+                ? '#F44336'
+                : parseInt((calcTotalPrice / 10000) * 100) >= 50 &&
+                  parseInt((calcTotalPrice / 10000) * 100) < 100
+                ? '#ff9800'
+                : '#4CAF50'
+            }`"
             size="30"
             :style="`position: absolute;
               bottom: 50%;
@@ -46,9 +51,14 @@
             >mdi-truck</v-icon
           >
           <v-progress-linear
-            :color="`${parseInt((calcTotalPrice / 10000) * 100) < 50 ? 'red' :
-            parseInt((calcTotalPrice / 10000) * 100) > 50 && 
-            parseInt((calcTotalPrice / 10000) * 100) < 100 ? 'orange' : 'green' }`"
+            :color="`${
+              parseInt((calcTotalPrice / 10000) * 100) < 50
+                ? 'red'
+                : parseInt((calcTotalPrice / 10000) * 100) >= 50 &&
+                  parseInt((calcTotalPrice / 10000) * 100) < 100
+                ? 'orange'
+                : 'green'
+            }`"
             height="10"
             :model-value="
               parseInt((calcTotalPrice / 10000) * 100) <= 100
@@ -173,7 +183,7 @@
             height="45"
             color="blue"
             width="100%"
-            @click="$router.push({name : 'checkout-page'})"
+            @click="$router.push({ name: 'checkout-page' })"
           >
             Check Out</v-btn
           >
@@ -185,7 +195,7 @@
             height="45"
             color="blue"
             width="100%"
-            @click="$router.push({name : 'cart-page'})"
+            @click="$router.push({ name: 'cart-page' })"
           >
             View Cart</v-btn
           >
