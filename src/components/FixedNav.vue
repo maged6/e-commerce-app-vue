@@ -7,7 +7,7 @@
             <img
               src="@/images/logo.png"
               style="cursor: pointer"
-              @click="this.$router.push('/')"
+              @click="this.$router.push({name: 'home'})"
             />
           </v-col>
 

@@ -48,10 +48,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  max-height: 100%;
+  min-width: 100%;
 }
 
 nav {
-  padding: 30px;
 
   a {
     font-weight: bold;

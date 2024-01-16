@@ -2,7 +2,7 @@
   <div class="cart-drawer">
     <v-navigation-drawer
       v-model="drawer"
-      width="450"
+      width="400"
       class="m-0 p-0"
       temporary
       location="right"

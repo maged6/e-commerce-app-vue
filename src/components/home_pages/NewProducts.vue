@@ -152,7 +152,7 @@
             </swiper>
           </v-col>
           <v-col cols="5">
-            <img src="@/images/vr-banner.webp" alt="" />
+            <img src="@/images/vr-banner.webp" class="w-100" alt="" />
           </v-col>
         </v-row>
       </v-container>
