@@ -14,9 +14,9 @@
               @click="this.$router.push({name: 'home'})"
             />
             </v-col>
-          <v-col cols="4" class="d-flex justify-end aline-center px-1 py-8">
+          <v-col cols="4" class="d-flex justify-end aline-center py-8">
           
-          <v-icon class="mr-1" style="color: black" size="35">mdi-account-circle-outline </v-icon>
+          <v-icon class="mr-1" style="color: black" size="30">mdi-account-circle-outline </v-icon>
 
           
           <div
@@ -24,7 +24,7 @@
                 @click="openCart"
                 style="cursor: pointer"
               >
-          <v-icon  style="color: black" size="35">mdi-delete-outline </v-icon>
+          <v-icon  style="color: black" size="30">mdi-delete-outline </v-icon>
 
                 <v-badge
                   v-if="cartItems.length"

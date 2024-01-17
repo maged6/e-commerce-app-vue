@@ -110,10 +110,11 @@
       }
       p{
         font-size: 5px !important;
+        padding: 8px 0px 8px 0px !important;
       }
       button{
-        width: 100px !important;
-        height: 30px !important;
+        width: 90px !important;
+        height: 25px !important;
       }
     }
   }
