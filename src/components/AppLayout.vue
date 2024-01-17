@@ -9,8 +9,8 @@
           $route.name == 'checkout-page' ? '0px' 
           : windowWidth <= 990 ?
           '60px'
-          : '170px'
-        } `"
+          : '135px'
+        } !important`"
       >
         <slot></slot>
       </v-main>
@@ -57,7 +57,7 @@ export default {
       this.windowWidth = window.innerWidth;
     }
     window.onscroll = ()=>{
-      if(window.scrollY >= 250){
+      if(window.scrollY >= 150){
         this.showFixed = true
       }else{
         this.showFixed = false

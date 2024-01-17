@@ -1,6 +1,6 @@
 <template>
   <div class="fixed-nav-bar">
-    <v-app-bar class="bg-blue">
+    <v-app-bar class="bg-blue px-3">
       <v-container fluid>
         <v-row>
           <v-col cols="2">

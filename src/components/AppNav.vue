@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <v-app-bar class="bg-blue py-3" height="fit-content" absolute>
+    <v-app-bar class="bg-blue py-3 px-8" height="fit-content" absolute>
       <v-container fluid>
         <v-row>
           <v-col cols="2">
@@ -11,7 +11,7 @@
             />
           </v-col>
 
-          <v-col cols="6">
+          <v-col cols="6" >
             <v-text-field
               type="search"
               outlined
@@ -109,7 +109,7 @@
                     :value="lang"
                   >
                     <v-list-item-title
-                      class="d-flex align-center"
+                      class="d-flex align-center px-5 py-3"
                       style="gap: 5px"
                     >
                       <span v-html="lang.flag"></span>
@@ -157,3 +157,10 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss">
+.v-field--active{
+  padding: 0px 15px 0px  15px !important;
+}
+</style>

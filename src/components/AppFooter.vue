@@ -183,7 +183,7 @@
         <v-row>
           <v-col cols="12">
             <div class="mt-11 text-center">
-              <img
+              <img class="w-100"
                 src="https://new-ella-demo.myshopify.com/cdn/shop/files/trust_551fa8e0-5f24-4fbc-bf22-74c01b859a01.png?v=1639984732"
               />
             </div>

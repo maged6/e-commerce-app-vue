@@ -14,9 +14,9 @@
               @click="this.$router.push({name: 'home'})"
             />
             </v-col>
-            <v-col cols="4" class="d-flex justify-end aline-center px-5 py-8">
+          <v-col cols="4" class="d-flex justify-end aline-center px-1 py-8">
           
-          <v-icon class="mr-5" style="color: black" size="35">mdi-account-circle-outline </v-icon>
+          <v-icon class="mr-1" style="color: black" size="35">mdi-account-circle-outline </v-icon>
 
           
           <div
