@@ -2,7 +2,7 @@
   <div class="Menu-drawer">
     <v-navigation-drawer
       v-model="drawer"
-      width="330"
+      :width="windowWidth <= 767 ? windowWidth / 2 : '400'"
       class="px-5 pt-4"
       temporary
       location="left"
@@ -42,6 +42,11 @@ import {productsModule} from '@/store/index';
 import { mapState } from 'pinia';
 export default {
   inject: ["Emitter"],
+  props:{
+    windowWidth:{
+      type: Number
+    }
+  },
   data() {
     return {
       drawer: false,

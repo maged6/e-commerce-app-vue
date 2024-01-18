@@ -2,12 +2,12 @@
   <div class="cart-drawer">
     <v-navigation-drawer
       v-model="drawer"
-      width="400"
-      class="m-0 p-0"
+      :width="windowWidth <= 767 ? windowWidth / 2 : '400'"
+      class="px-2 pt-3"
       temporary
       location="right"
     >
-      <v-card class="px-0" elevation="0">
+      <v-card class="px-4" elevation="0">
         <v-card-title
           class="px-0 d-flex justify-space-between"
           style="font-size: 17px; font-weight: bold"
@@ -105,7 +105,7 @@
         elevation="0"
         class="px-0 mt-5 item-card"
         v-if="cartItems.length"
-        max-height="280"
+        max-height="380"
         style="overflow-y: auto"
       >
         <v-container class="px-1">
@@ -114,10 +114,10 @@
             :key="item.id"
             class="mx-0 align-center"
           >
-            <v-col cols="5">
-              <img :src="item.thumbnail" class="w-100" />
+            <v-col cols="12" sm="5">
+              <img :src="item.thumbnail" class="w-100" style="height: 100%;" />
             </v-col>
-            <v-col cols="7">
+            <v-col cols="12" sm="7" class="px-3 py-3">
               <v-card-title
                 class="px-0"
                 style="white-space: pre-wrap; font-size: 14px; line-height: 1.2"
@@ -211,6 +211,11 @@ import { mapActions, mapState } from "pinia";
 
 export default {
   inject: ["Emitter"],
+  props:{
+    windowWidth:{
+      type: Number
+    }
+  },
   computed: {
     ...mapState(CartStore, ["cartItems"]),
     calcTotalPrice() {

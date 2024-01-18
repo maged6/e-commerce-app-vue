@@ -2,7 +2,7 @@
   <div class="top-offer bg-grey-lighten-4 pt-5 px-5">
     <v-container fluid>
       <v-row>
-        <v-col cols="12" sm="6" md="4" lg="4" class="py-0 px-3  pr-lg-6">
+        <v-col cols="12" sm="6" md="4" lg="4" class="py-0  px-sm-3  pr-lg-6">
           <v-hover v-slot="{ isHovering, props }">
             <div
               v-bind="props"

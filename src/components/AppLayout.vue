@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
     <v-layout class="position-relative">
-      <CartDrawer />
-      <MenueDrawer />
+      <CartDrawer  :windowWidth="windowWidth" />
+      <MenueDrawer  :windowWidth="windowWidth" />
       
       <v-main
         :style="`padding-top:${
@@ -22,6 +22,7 @@
 <FixedNav v-show="$route.name != 'checkout-page' && showFixed && windowWidth > 990" />
   
       <AppFooter v-show="$route.name != 'checkout-page'" />
+      
     </v-layout>
   </div>
 </template>
