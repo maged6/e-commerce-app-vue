@@ -5,10 +5,10 @@
         {{ title }}
       </h2>
     </div>
-    <div class="loading" v-if="!products.length">
+    <div class="loading " v-if="!products.length">
       <v-container fluid>
         <v-row>
-          <v-col cols="3" v-for="sek in 4" :key="sek">
+          <v-col cols="3" class="px-3"  v-for="sek in 4" :key="sek">
             <v-skeleton-loader
               type="image, article ,button"
             ></v-skeleton-loader>
@@ -28,12 +28,13 @@
       :slides-per-view="4"
       :space-between="35"
       class="pb-9 px-5"
+      :breakpoints="breakPoints"
       :navigation="{
         prevIcon: '.prev-navigation',
         nextIcon: '.next-navigation',
       }"
     >
-      <swiper-slide v-for="item in products" :key="item.id">
+      <swiper-slide class="px-3" v-for="item in products" :key="item.id">
         <v-card elevation="0" class="pb-6">
           <v-hover v-slot="{ isHovering, props }">
             <div
@@ -56,7 +57,7 @@
                 class="quick-view-btn"
                 color="whigt"
                 height="40"
-                width="80"
+                width="100"
                 style="
                   text-transform: none;
                   position: absolute;
@@ -118,7 +119,9 @@
           <div>
             <v-btn
               density="compact"
-              class="py-2 px-15 ml-5"
+              height="40"
+              width="170"
+              class="ml-8 mt-2"
               variant="outlined"
               style="text-transform: none; border-radius: 30px"
               @click="
@@ -174,6 +177,20 @@ export default {
   data: () => {
     return {
       selectImg: {},
+      breakPoints:{
+        0:{
+          slidesPerView : 1,
+        },
+        580:{
+          slidesPerView : 2,
+        },
+        767:{
+          slidesPerView : 3,
+        },
+        990:{
+          slidesPerView : 4,
+        }
+      }
     };
   },
 };
@@ -200,8 +217,9 @@ export default {
     }
   }
   .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
+    margin-right: 3px !important;
   }
   .parant:hover {
     .quick-view-btn {

@@ -7,7 +7,8 @@
       location="left bottom"
       max-width="300"
       timeout="3000"
-    >
+      color="rgb(76, 175, 80)"
+    > 
       {{ itemTitle }} has been added to your cart successfuly!
       <template v-slot:actions>
         <v-icon @click="bar = flase">mdi-close</v-icon>
@@ -42,15 +43,20 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  margin: 0px !important;
+  padding: 0px !important;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  max-height: 100%;
+  min-width: 100%;
 }
 
 nav {
-  padding: 30px;
 
   a {
     font-weight: bold;

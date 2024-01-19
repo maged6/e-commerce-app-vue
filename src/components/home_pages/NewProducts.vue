@@ -8,7 +8,7 @@
     <div class="prodects">
       <v-container fluid>
         <v-row>
-          <v-col cols="7">
+          <v-col cols="12" md="7">
             <div class="loading" v-if="!products.length">
               <v-container fluid class="pt-16">
                 <v-row>
@@ -32,9 +32,10 @@
               :modules="modules"
               :slides-per-view="3"
               :space-between="20"
+              :breakpoints="breakPoints"
               class="py-13"
             >
-              <swiper-slide v-for="item in products" :key="item.id">
+              <swiper-slide class="px-3" v-for="item in products" :key="item.id">
                 <v-card elevation="0" class="pb-6">
                   <v-hover v-slot="{ isHovering, props }">
                     <div
@@ -63,7 +64,7 @@
                         class="quick-view-btn"
                         color="whigt"
                         height="40"
-                        width="80"
+                        width="100"
                         style="
                           text-transform: none;
                           position: absolute;
@@ -130,9 +131,10 @@
                   <div>
                     <v-btn
                       density="compact"
-                      class="py-2 px-15 mt-5 ml-5"
+                      height="40"
+                      width="150"
+                      class="ml-5 mt-2"
                       variant="outlined"
-                      width="30px"
                       style="text-transform: none; border-radius: 30px"
                       @click="
                         $router.push({
@@ -151,8 +153,8 @@
               <div class="swiper-pagination"></div>
             </swiper>
           </v-col>
-          <v-col cols="5">
-            <img src="@/images/vr-banner.webp" alt="" />
+          <v-col cols="12" md="5">
+            <img src="@/images/vr-banner.webp" class="w-100 pl-3" style="height: 100%;" alt="" />
           </v-col>
         </v-row>
       </v-container>
@@ -189,6 +191,20 @@ export default {
   data: () => {
     return {
       selectImg: {},
+      breakPoints:{
+        0:{
+          slidesPerView : 1,
+        },
+        580:{
+          slidesPerView : 2,
+        },
+        767:{
+          slidesPerView : 3,
+        },
+        990:{
+          slidesPerView : 3,
+        }
+      }
     };
   },
 };
@@ -199,6 +215,8 @@ export default {
   .swiper-pagination-bullet {
     width: 15px;
     height: 15px;
+    margin-right: 3px !important;
+
   }
   .parant:hover {
     .quick-view-btn {

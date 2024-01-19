@@ -1,6 +1,6 @@
 <template>
   <div class="why-shop-with-us">
-    <div class="title d-flex align-center justify-center pt-10">
+    <div class="title d-flex align-center justify-center py-16 ">
       <span style="color: rgb(140 255 217); font-size: 25px; font-weight: 700">
         Why Shop
       </span>
@@ -9,8 +9,8 @@
       </p>
     </div>
     <v-container fluid>
-      <v-row>
-        <v-col cols="3" v-for="card in shopWithUs" :key="card.title">
+      <v-row class="pb-16">
+        <v-col cols="12" sm="6" md="4" lg="3"  class="mt-3" v-for="card in shopWithUs" :key="card.title">
           <v-card
             class="text-center"
             style="color: white; background-color: transparent"
@@ -68,7 +68,7 @@ export default {
 <style lang="scss">
 .why-shop-with-us {
   background-image: url(@/images/why-shop-with-us-banner.webp);
-  height: 390px;
+  height: 100%;
   background-size: cover;
 }
 </style>
