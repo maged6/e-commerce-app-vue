@@ -1,7 +1,7 @@
 <template>
   <div class="order_success">
-    <v-dialog v-model="dialog" width="50%" persistent="">
-      <v-card class="text-center py-7">
+    <v-dialog v-model="dialog"  width="80%"  persistent="">
+        <v-card class="text-center px-10 py-7">
         <div class="text-center">
           <v-icon
             size="75"

@@ -5,7 +5,9 @@
     <v-snackbar
       v-model="bar"
       location="left bottom"
-      max-width="300"
+      max-width="400"
+      height="70"
+      style="left: 20px ;bottom: 20px;"
       timeout="3000"
       color="rgb(76, 175, 80)"
     > 
@@ -29,7 +31,7 @@ export default {
   },
   data: () => {
     return {
-      bar: false,
+      bar: false ,
       itemTitle: "",
     };
   },

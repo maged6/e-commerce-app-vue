@@ -1,18 +1,18 @@
 <template>
   <v-container fluid class="mt-16">
-    <v-row v-if="loading">
-      <v-col cols="7">
+    <v-row v-if="loading" class="px-5 pb-16">
+      <v-col cols="12" sm="7" class="pr-5" >
         <v-skeleton-loader type="image,  image, image "></v-skeleton-loader>
       </v-col>
-      <v-col cols="5">
+      <v-col cols="12" sm="5">
         <v-skeleton-loader type="article,  article,article"></v-skeleton-loader>
       </v-col>
     </v-row>
-    <v-row v-if="!loading">
-      <v-col cols="7">
+    <v-row v-if="!loading"  class="px-5 pb-16">
+      <v-col cols="12" sm="7" class="pr-5">
         <img
           :src="tab ? tab : item.thumbnail"
-          style="width: 100%; height: 500px"
+          style="width: 100%; height: 400px"
         />
         <v-tabs center-active height="220" v-model="tab">
           <v-tab
@@ -21,16 +21,16 @@
             class="mx-8"
             :value="images"
           >
-            <img :src="images" width="100" height="200" />
+            <img :src="images" width="100" height="150" />
           </v-tab>
         </v-tabs>
       </v-col>
-      <v-col cols="5">
+      <v-col cols="12" sm="5">
         <v-card elevation="0">
-          <v-card-title class="px-0" style="font-size: 22px; font-weight: 700">
+          <v-card-title class="px-0 " style="font-size: 22px; font-weight: 700">
             ({{ item.title }}) Sample - {{ item.category }} For Sale
           </v-card-title>
-          <v-card-text class="px-0 pt-3">
+          <v-card-text class="px-0 pt-5">
             <v-rating
               readonly
               v-model="item.rating"
@@ -42,7 +42,7 @@
             </v-rating>
             <span style="font-size: 20px"> Stock : {{ item.stock }}</span>
           </v-card-text>
-          <v-card-text class="px-0">
+          <v-card-text class="px-0 pt-5">
             <strong>
               <del> ${{ item.price }} </del>
               from
@@ -55,11 +55,11 @@
               </span>
             </strong>
           </v-card-text>
-          <v-card-text class="px-0">
+          <v-card-text class="px-0 pt-5">
             {{ item.description }}
           </v-card-text>
-          <v-card-text class="px-0"> Brand : {{ item.brand }} </v-card-text>
-          <v-card-text class="px-0">
+          <v-card-text class="px-0 pt-5"> Brand : {{ item.brand }} </v-card-text>
+          <v-card-text class="px-0 pt-5">
             <strong> Availability: </strong>
             {{ item.stock ? "Availabe in stock" : "Not Availabe in stock" }}
           </v-card-text>
@@ -92,7 +92,7 @@
               <v-icon size="22" @click="quantity++">mdi-plus</v-icon>
             </div>
           </div>
-          <v-card-text class="px-0">
+          <v-card-text class="px-0 pt-5">
             <strong> Subtotal: </strong>
             ${{
               Math.ceil(

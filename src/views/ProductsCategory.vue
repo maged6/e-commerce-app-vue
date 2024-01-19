@@ -12,15 +12,25 @@
           min-height="700px"
         >
           <v-row v-if="loading">
-            <v-col cols="3" v-for="sek in 4" :key="sek">
+            <v-col 
+            cols="12"
+            lg="3"
+            md="4"
+            sm="6" 
+            v-for="sek in 4" :key="sek">
               <v-skeleton-loader
                 type="image, article ,button"
               ></v-skeleton-loader>
             </v-col>
           </v-row>
           <v-row v-if="!loading">
-            <v-col cols="3" v-for="item in ProductsCategory" :key="item.id">
-              <v-card elevation="0" class="pb-6">
+            <v-col 
+            cols="12"
+            lg="3"
+            md="4"
+            sm="6" 
+            v-for="item in ProductsCategory" :key="item.id">
+              <v-card elevation="0" class="px-10 pb-16">
                 <v-hover v-slot="{ isHovering, props }">
                   <div
                     class="parant"

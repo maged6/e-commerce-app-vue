@@ -1,7 +1,7 @@
 <template>
   <div class="card-page">
-    <v-container fluid>
-      <v-col cols="12">
+    <v-container fluid class="px-12 py-10">
+      <v-col cols="12" class="pb-12">
         <h1 class="py-4">Your Cart</h1>
         <div
           class="bar-parent mt-6"
@@ -61,14 +61,14 @@
         >
       </v-col>
       <v-row>
-        <v-col cols="8">
+        <v-col clos="12" lg="8" class="pr-5">
           <v-table>
             <thead>
               <tr>
-                <th class="text-left">PRODECT</th>
-                <th class="text-left">PRICE</th>
-                <th class="text-left">QUANTITY</th>
-                <th class="text-left">TOTAL</th>
+                <th class="text-left px-3">PRODECT</th>
+                <th class="text-left px-3">PRICE</th>
+                <th class="text-left px-3">QUANTITY</th>
+                <th class="text-left px-3">TOTAL</th>
               </tr>
             </thead>
             <tbody>
@@ -168,9 +168,12 @@
             <img src="@/images/cart-page-cards.webp" width="30%" alt="" />
           </div>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" lg="4" class="px-2">
           <v-card elevation="0" class="ml-0">
-            <v-card-title style="font-size: 22px; font-weight: 800">
+            <v-card-title
+              class="mt-3"
+              style="font-size: 22px; font-weight: 800"
+            >
               ORDER SUMMARY</v-card-title
             >
             <hr
@@ -180,9 +183,10 @@
                 color: black;
                 background-color: black;
               "
+              class="mt-3"
             />
             <v-card-text
-              class="d-flex justify-space-between py-8"
+              class="d-flex justify-space-between py-8 mt-3"
               style="font-size: 22px; font-weight: 500"
             >
               <span>Subtotal </span>
@@ -190,7 +194,7 @@
             </v-card-text>
             <hr style="height: 2px; color: black; background-color: black" />
             <v-card-text
-              class="d-flex flex-column"
+              class="d-flex flex-column mt-3"
               style="font-size: 22px; font-weight: 500"
             >
               <span>Get Shipping Estimate: </span>
@@ -240,7 +244,7 @@
                   variant="outlined"
                 ></v-text-field>
               </div>
-              <v-card-actions>
+              <v-card-actions class="mt-3">
                 <v-btn
                   variant="elevated"
                   rounded
@@ -254,7 +258,10 @@
                 >
               </v-card-actions>
             </v-card-text>
-            <hr style="height: 2px; color: black; background-color: black" />
+            <hr
+              style="height: 2px; color: black; background-color: black"
+              class="mt-3"
+            />
             <v-card-text
               class="d-flex justify-space-between py-8"
               style="font-size: 22px; font-weight: 500"
@@ -331,5 +338,19 @@ export default {
 <style lang="scss">
 .v-table__wrapper {
   overflow: hidden;
+}
+.v-field {
+  padding: 0px 15px 0px 15px !important;
+}
+
+@media (max-width: 767px) {
+  .card-page {
+    table {
+      width: 800px !important;
+    }
+    .v-table__wrapper {
+      overflow: scroll !important;
+    }
+  }
 }
 </style>

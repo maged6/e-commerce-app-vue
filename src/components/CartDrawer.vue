@@ -261,4 +261,23 @@ export default {
     background-color: #2196f3;
   }
 }
+
+@media (max-width: 820px) {
+  .cart-drawer{
+  .item-card{
+   max-height: 700px !important;
+
+  }
+
+}
+}
+@media (max-width: 400px) {
+  .cart-drawer{
+  .item-card{
+   max-height: 1700px !important;
+
+  }
+
+}
+}
 </style>

@@ -1,12 +1,13 @@
 <template>
-  <div class="ckeckout">
+  <div class="ckeckout px-0 py-0">
     <v-container fluid class="px-0 py-0">
       <v-row class="px-0 py-0">
-        <v-col cols="7" class="px-0 py-0">
+        <v-col cols="12" md="6" lg="7" class="px-0 py-0">
           <v-card
             elevation="0"
             height="100%"
             width="100%"
+            class=" px-8 py-16"
             style="padding: 60px 40px 0px 120px"
           >
             <v-card-title style="font-size: 20px; font-weight: 700">
@@ -26,12 +27,13 @@
             >
               Experss Checkout
             </v-card-text>
-            <v-card-actions class="px-16 d-flex">
+            <v-card-actions class="px-16 pt-5 d-flex">
               <v-btn
                 color="blue"
                 variant="elevated"
                 height="50"
                 width="50%"
+                class="mx-2"
                 style="font-size: 17px; font-weight: 700"
               >
                 <v-icon class="px-3" color="Complementary">mdi-basket </v-icon>
@@ -43,6 +45,7 @@
                 height="50"
                 width="50%"
                 color="black"
+                class="mx-2"
                 style="font-size: 17px; font-weight: 700"
               >
                 <v-icon class="px-3" color="Complementary">mdi-google </v-icon>
@@ -142,10 +145,10 @@
             </div>
           </v-card>
         </v-col>
-        <v-col cols="5" class="px-0 py-0">
+        <v-col cols="12" md="6" lg="5" class="px-0 py-0">
           <v-card
             elevation="0"
-            class="bg-grey-lighten-3"
+            class="bg-grey-lighten-3 px-8 py-16"
             height="100%"
             width="100%"
             style="padding: 60px 120px 0px 40px"
@@ -198,7 +201,7 @@
 
             <v-card-text
               style="font-size: 20px; font-weight: 700; color: rgb(65, 64, 64)"
-              class="d-flex align-center justify-space-between"
+              class="d-flex align-center justify-space-between mt-5"
             >
               <span> Total </span>
               <span> ${{ calcTotalPrice }} </span>
@@ -243,3 +246,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.v-field {
+  padding: 0px 15px 0px 15px !important;
+}
+</style>
