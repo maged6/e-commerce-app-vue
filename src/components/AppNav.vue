@@ -10,7 +10,6 @@
               @click="$router.push({ name: 'home' })"
             />
           </v-col>
-
           <v-col cols="6" >
             <v-text-field
               type="search"
@@ -20,6 +19,7 @@
               append-inner-icon="mdi-magnify"
               placeholder="Search the store"
               persistent-placeholder
+              @click="openPup"
             />
           </v-col>
           <v-col cols="4">
@@ -142,6 +142,9 @@ export default {
     openCart() {
       this.Emitter.emit("openCart");
     },
+    openPup(){
+      this.Emitter.emit("openPopSearch");
+    }
   },
   data() {
     return {
@@ -153,6 +156,7 @@ export default {
         },
       ],
       langs: language,
+      // pup : false ,
     };
   },
 };

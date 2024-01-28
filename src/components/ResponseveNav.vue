@@ -5,7 +5,9 @@
         <v-row class="aline-center">
             <v-col cols="4" class="d-flex align-center "> 
         <v-app-bar-nav-icon @click="openMenue" ></v-app-bar-nav-icon>
-        <v-icon class="ml-5" style="color: black" size="35">mdi-magnify</v-icon>
+        <v-icon class="ml-5" style="color: black" size="35"
+        @click="openPup"
+        >mdi-magnify</v-icon>
             </v-col>
             <v-col cols="4" class="d-flex align-center "> 
                 <img
@@ -58,6 +60,9 @@ export default {
   methods: {
     openCart() {
       this.Emitter.emit("openCart");
+    },
+    openPup(){
+      this.Emitter.emit("openPopSearch");
     },
     openMenue() {
       this.Emitter.emit("openMenue");

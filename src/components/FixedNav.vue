@@ -40,7 +40,9 @@
               class="d-flex justify-end align-center mr-3 mt-1"
               style="gap: 20px"
             >
-              <v-icon style="color: white" size="35">mdi-magnify</v-icon>
+              <v-icon style="color: white" size="35" 
+              @click="openPup"
+              >mdi-magnify</v-icon>
 
               <div
                 class="wishlists d-flex flex-column align-center"
@@ -79,6 +81,9 @@ export default {
     openCart() {
       this.Emitter.emit("openCart");
     },
+    openPup(){
+      this.Emitter.emit("openPopSearch");
+    }
   },
 };
 </script>

@@ -2,6 +2,7 @@
   <app-layout>
     <router-view />
     <QuickView />
+    <PoupSearch/>
     <v-snackbar
       v-model="bar"
       location="left bottom"
@@ -22,12 +23,15 @@
 <script>
 import AppLayout from "@/components/AppLayout.vue";
 import QuickView from "@/components/QuickView.vue";
+import PoupSearch from "./components/PoupSearch.vue";
+
 
 export default {
   inject: ["Emitter"],
   components: {
     AppLayout,
     QuickView,
+    PoupSearch
   },
   data: () => {
     return {
