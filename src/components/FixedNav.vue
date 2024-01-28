@@ -40,7 +40,7 @@
               class="d-flex justify-end align-center mr-3 mt-1"
               style="gap: 20px"
             >
-              <v-icon style="color: white" size="35" 
+              <v-icon style="color: white ;cursor: pointer;" size="35" 
               @click="openPup"
               >mdi-magnify</v-icon>
 

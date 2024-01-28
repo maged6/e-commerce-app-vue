@@ -5,7 +5,7 @@
         <v-row class="aline-center">
             <v-col cols="4" class="d-flex align-center "> 
         <v-app-bar-nav-icon @click="openMenue" ></v-app-bar-nav-icon>
-        <v-icon class="ml-5" style="color: black" size="35"
+        <v-icon class="ml-5" style="color: black ; cursor: pointer;" size="35"
         @click="openPup"
         >mdi-magnify</v-icon>
             </v-col>
